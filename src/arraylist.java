@@ -26,7 +26,12 @@ public class arraylist {
     startTime = System.nanoTime();
 
     // linkedList.get(0);
-    linkedList.get(500000);
+    // linkedList.get(500000);
+    // linkedList.get(999999);
+
+    // linkedList.remove(0);
+    // linkedList.remove(500000);
+    linkedList.remove(999999);
     
 
     endTime = System.nanoTime();
@@ -39,7 +44,12 @@ public class arraylist {
     startTime = System.nanoTime();
 
     // arraylist.get(0);
-    arraylist.get(500000);
+    // arraylist.get(500000);
+    // arraylist.get(999999);
+     
+    // arraylist.remove(0);
+    // arraylist.remove(500000);
+    arraylist.remove(999999);
     
 
     endTime = System.nanoTime();
