@@ -1,7 +1,8 @@
 public class interpolationSearch {
     public static void main(String[] args) {
-        int[] arr = {1,2,3,4,5,6,7,8,9};
-        int index = interpolationSearch(arr, 1);
+        // int[] arr = {1,2,3,4,5,6,7,8,9};
+        int[] arr = {1,2,4,8,16,32,64,128,256,512,1024};
+        int index = interpolationSearch(arr, 256);
 
         if( index != -1){
             System.out.println("Element found at index " + index);  
