@@ -1,69 +1,60 @@
 public class mergesort {
 
-    // merge sort 
-    public static void main(String[] args) {
-        
-        int[] arr = {8,2,5,3,4,7,6,1};
-        mergesortfunction(arr);
+  public static void main(String[] args) {
+      int[] arr = {8, 2, 5, 3, 4, 7, 6, 1};
+      mergeSort(arr);
 
-        for (int i = 0; i < arr.length; i++) {
-                System.out.println(arr[i] + " ");
-        }
-    }
+      for (int i = 0; i < arr.length; i++) {
+          System.out.print(arr[i] + " ");
+      }
+  }
 
-    private static void mergesortfunction(int[] arr) {
+  private static void mergeSort(int[] arr) {
       int length = arr.length;
-      if(length <= 1 ){   // base case
-        return;
+      if (length <= 1) {  // base case
+          return;
       }
-      int middle = length/2;
-      int[] left = new int[middle]; // left half
-      int[] right = new int[length - middle]; // right half
 
-      int i = 0; // left array
-      int j = 0; // right array
+      int middle = length / 2;
+      int[] left = new int[middle];
+      int[] right = new int[length - middle];
 
-      for (int k = 0; k < right.length; k++) {
-        if(i < middle){
-            left[k] = arr[k];
-        }
-        else{
-            right[j] = arr[k];
-            j++;
-        }
-      }
-      mergesortfunction(left);
-      mergesortfunction(right);
+      System.arraycopy(arr, 0, left, 0, middle);  // Efficient copying using System.arraycopy
+      System.arraycopy(arr, middle, right, 0, length - middle);
+
+      mergeSort(left);
+      mergeSort(right);
       merge(left, right, arr);
-    }
+  }
 
-    public static void merge(int[] leftArray, int[] rightArray, int[] array){
-      int leftSize = array.length/2;
-      int rightSize = array.length - leftSize;
-      int i = 0, l = 0, r =0;
+  public static void merge(int[] leftArray, int[] rightArray, int[] arr) {
+      int leftSize = leftArray.length;
+      int rightSize = rightArray.length;
+      int i = 0, l = 0, r = 0;
 
       // check condition for merging
       while (l < leftSize && r < rightSize) {
-        if(leftArray[l] < rightArray[r]){
-            array[i] = leftArray[l];
-            i++;
-            l++;
-        }
-        else{
-            array[i] = rightArray[r];
-            i++;
-            r++; 
-        }
+          if (leftArray[l] < rightArray[r]) {
+              arr[i] = leftArray[l];
+              i++;
+              l++;
+          } else {
+              arr[i] = rightArray[r];
+              i++;
+              r++;
+          }
       }
-      while(l < leftSize){
-        array[i] = leftArray[l];
-        i++;
-        l++;
+
+      // Copy remaining elements from left or right arrays
+      while (l < leftSize) {
+          arr[i] = leftArray[l];
+          i++;
+          l++;
       }
       while (r < rightSize) {
-        array[i] = rightArray[r];
-        i++;
-        r++;
+          arr[i] = rightArray[r];
+          i++;
+          r++;
       }
-    }
+  }
 }

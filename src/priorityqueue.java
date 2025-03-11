@@ -7,8 +7,8 @@ import java.util.Queue;
 public class priorityqueue {
     public static void main(String[] args) {
         // Queue<Double> queue =  new LinkedList<>();
-        // Queue<Double> queue =  new PriorityQueue<>(); // in this it will priotrize like store in assnding order
-        Queue<Double> queue =  new PriorityQueue<>(Collections.reverseOrder());// in this it will priotrize in desending order 
+        Queue<Double> queue =  new PriorityQueue<>(); // in this it will priotrize like store in assnding order
+        // Queue<Double> queue =  new PriorityQueue<>(Collections.reverseOrder());// in this it will priotrize in desending order 
         // it works on alphabet also like A, N, M, V
 
 
