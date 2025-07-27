@@ -27,7 +27,7 @@ public class ReverseString {
         // Use StringBuilder for easy reverse
         StringBuilder sb = new StringBuilder(input);
         sb.reverse();
-
+      System.out.println(sb);
         System.out.println("Reversed string = " + sb.toString());
     }
 }
